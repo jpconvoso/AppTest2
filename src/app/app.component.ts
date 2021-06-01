@@ -16,15 +16,17 @@ export class AppComponent implements OnInit {
   city = '';
   pincode = '';
   email = '';
-  dob = '02-05-2021';
+  dob = '';
   ngOnInit() {
     this.dataService.sendGetRequest().subscribe((data: any) => {
+    console.log(data);
       this.fname = data.name
-      this.address1 = data.address.street;
-      this.address2 = data.address.suite;
+      this.address1 = data.address.street
+      this.address2 = data.address.suite
       this.city = data.address.city
       this.pincode = data.address.zipcode
       this.email = data.email
+      this.dob = "05/02/2020"
     });
   }
 }
